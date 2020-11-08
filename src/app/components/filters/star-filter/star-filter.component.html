@@ -1,0 +1,25 @@
+<h5>Ratings:</h5>
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" (change)="onRatingsChange(5, $event.target.checked)">
+    <ngb-rating readonly="true" [rate]="5" [max]="5"></ngb-rating>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" (change)="onRatingsChange(4, $event.target.checked)">
+    <ngb-rating readonly="true" [rate]="4" [max]="5"></ngb-rating>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" (change)="onRatingsChange(3, $event.target.checked)">
+    <ngb-rating readonly="true" [rate]="3" [max]="5"></ngb-rating>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" (change)="onRatingsChange(2, $event.target.checked)">
+    <ngb-rating readonly="true" [rate]="2" [max]="5"></ngb-rating>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" (change)="onRatingsChange(1, $event.target.checked)">
+    <ngb-rating readonly="true" [rate]="1" [max]="5"></ngb-rating>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" (change)="onRatingsChange(0, $event.target.checked)">
+    <ngb-rating readonly="true" [rate]="0" [max]="5"></ngb-rating>
+</div>

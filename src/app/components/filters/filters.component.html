@@ -1,0 +1,9 @@
+<div class="form-group card" style="padding: 2rem;">
+    <app-star-filter (ratings)="onRatingFilter($event)"></app-star-filter>
+    <hr class="solid">
+    <app-price-filter (minPrice)="onMinPriceFilter($event)" (maxPrice)="onMaxPriceFilter($event)"></app-price-filter>
+    <hr class="solid">
+    <app-date-filter (startDate)="onStartDateFilter($event)" (endDate)="onEndDateFilter($event)"></app-date-filter>
+    <hr class="solid">
+    <app-country-filter (countries)="onCountryFilter($event)"></app-country-filter>
+</div>

@@ -1,0 +1,92 @@
+{
+  "trips": [
+    {
+      "id": 1,
+      "name": "Trip 1",
+      "country": "Spain",
+      "startDate": "01-05-2020",
+      "endDate": "05-14-2020",
+      "price": 1500,
+      "capacity": 20,
+      "description": "A number of independent kingdoms united in 1492 to form the Kingdom of Spain, a cultural patchwork that continues to shape the modern nation’s dynamic identity. Spain comprises much of the Iberian Peninsula, which it shares with Portugal on the southwestern edge of Europe. It also includes the Balearic Islands in the Mediterranean Sea, the Canary Islands in the Atlantic Ocean and two enclaves in North Africa.",
+      "imageUri": "https://www.usnews.com/dims4/USNEWS/f1e1318/2147483647/resize/1200x%3E/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2F4a%2Fa9%2F71472a834026aa6a61658c00b3e7%2Fbcspain-profile-editorial.spain_profile"
+    },
+    {
+      "id": 2,
+      "name": "Trip 2",
+      "country": "Italy",
+      "startDate": "01-06-2020",
+      "endDate": "06-14-2020",
+      "price": 2000,
+      "capacity": 50,
+      "description": "Italy is a south-central European country, whose boot-shaped borders extend into the Mediterranean Sea. The country’s historical cities, world-renowned cuisine and geographic beauty make it a popular destination for more than 40 million tourists each year. The nation is home to Mount Etna, Europe’s tallest and most active volcano, and houses two countries within its borders – the Vatican and San Marino",
+      "imageUri": "https://www.usnews.com/dims4/USNEWS/c6ffc6e/2147483647/resize/1200x%3E/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2F0d%2Fb6%2F753915ce49f6bb33a4533ecc98d8%2Fbc18.countries_italy_crop.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Trip 3",
+      "country": "Greece",
+      "startDate": "01-07-2020",
+      "endDate": "07-14-2020",
+      "price": 1100,
+      "capacity": 40,
+      "description": "Located in southeastern Europe, Greece as an independent nation is young, existing since the 19th century. Its civilization, however, is one of history’s oldest and most influential, credited with creating the concept of democracy as well as the ancient Olympic Games, and laying Western foundations in science, the arts and philosophy.",
+      "imageUri": "https://f4fcdn.eu/wp-content/uploads/2018/05/Santorini-Patryk-Kosmider.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Trip 4",
+      "country": "New Zealand",
+      "startDate": "01-08-2020",
+      "endDate": "08-14-2020",
+      "price": 4000,
+      "capacity": 10,
+      "description": "British and Polynesian influences course through picturesque New Zealand, an island nation in the Pacific Ocean southeast of Australia. Early Maori settlers ceded sovereignty to British invaders with the Treaty of Waitangi in 1840, and European settlers flooded in. Today, 70 percent of Kiwis, a common term for the people of New Zealand after a native flightless bird, are of European descent. A sense of pride has surged among the Maori, the country’s first settlers who now account for about 14 percent, as homeland grievances become more openly addressed.",
+      "imageUri": "https://www.usnews.com/dims4/USNEWS/57fa01c/2147483647/resize/1200x%3E/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2Fd8%2Fab%2Fc53e172746338529fdcaef9df304%2Fbc18.countries_new_zealand_crop.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Trip 5",
+      "country": "Australia",
+      "startDate": "01-09-2020",
+      "endDate": "09-14-2020",
+      "price": 6000,
+      "capacity": 15,
+      "description": "The Commonwealth of Australia occupies the Australian continent. The country also includes some islands, most notably Tasmania. Indigenous people occupied the land for at least 40,000 years before the first British settlements of the 18th century.",
+      "imageUri": "https://www.usnews.com/dims4/USNEWS/b407667/2147483647/resize/1200x%3E/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2F4f%2Fa6%2Ff37037554a07a476a794f2ed996b%2Fbc18countries-australia-crop-editorial.countries_australia_crop.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Trip 6",
+      "country": "Portugal",
+      "startDate": "01-10-2020",
+      "endDate": "10-14-2020",
+      "price": 2500,
+      "capacity": 50,
+      "description": "Jutting into the Atlantic Ocean on the edge of the Iberian Peninsula and flanked by Spain to the east, Portugal is a nation with its gaze turned outward. Its history is steeped in discovery and exploration, beginning with early leaders that, after ousting Celtic and Moorish settlers in the 12th century, focused on building their kingdom beyond continental borders.",
+      "imageUri": "https://www.usnews.com/dims4/USNEWS/849e24d/2147483647/resize/1200x%3E/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2Fa1%2Fc8%2Fda13ca3c4f959fce25002a4165f9%2Fbc16-portugal-crop-editorial.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Trip 7",
+      "country": "Brazil",
+      "startDate": "01-11-2020",
+      "endDate": "11-14-2020",
+      "price": 3000,
+      "capacity": 60,
+      "description": "Occupying half of South America’s land mass, Brazil is the giant of the continent – both in size and in population. Brazil’s history is filled with economic turmoil, veering from boom to bust, and its culture is a melting pot that has traditionally welcomed the world. Brazil is one of the world’s top tourist destinations. However, the country in the 21st century confronts serious questions touching on poverty, inequality, governance and the environment.",
+      "imageUri": "https://www.usnews.com/dims4/USNEWS/5a8d4c2/2147483647/resize/1200x%3E/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2F46%2F5a%2Fbacddfb241779ed35deabf94aed0%2F151208-editorial.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Trip 8",
+      "country": "Thailand",
+      "startDate": "01-12-2020",
+      "endDate": "12-14-2020",
+      "price": 7000,
+      "capacity": 50,
+      "description": "Thailand, which translates to “land of the free,” is the only Southeast Asian nation that did not encounter European colonization. Located just above the equator, the nation is wedged into the Indochina peninsula with neighbors Myanmar, Laos and Cambodia and has an arm that extends out to Malaysia.",
+      "imageUri": "https://www.usnews.com/dims4/USNEWS/58f413f/2147483647/resize/1200x%3E/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2F96%2F63%2F58e36c9e40bcaeb779b21f36b8e5%2Fbc16-thailand-crop-editorial.jpg"
+    }
+  ]
+}

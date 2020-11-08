@@ -1,0 +1,8 @@
+<div class="card max-auto p-2">
+    <div class="d-inline">
+        <p><strong><i>{{ review.author }}</i></strong></p>
+        <ngb-rating readonly="true" [(rate)]="review.rating" [max]="5" style="font-size: 1.5rem;"></ngb-rating>
+    </div>
+    
+    <p class="lead">{{ review.message }}</p>
+</div>

@@ -1,0 +1,61 @@
+<div class="modal-header">
+    <h4 class="modal-title">New trip</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div class="modal-body">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <form [formGroup]="tripForm" (ngSubmit)="addTrip(tripForm)">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" formControlName="name">
+                        </div>
+                
+                        <div class="form-group">
+                            <label>Description</label>
+                            <input type="text" formControlName="description">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Country</label>
+                            <input type="text" formControlName="country">
+                        </div>
+                
+                        <div class="form-group">
+                            <label>Price</label>
+                            <input type="text" formControlName="price">
+                        </div>
+                
+                        <div class="form-group">
+                            <label>Capacity</label>
+                            <input type="text" formControlName="capacity">
+                        </div>
+                
+                        <div class="form-group">
+                            <label>Start Date</label>
+                            <input type="date" formControlName="startDate">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>End Date</label> 
+                            <input type="date" formControlName="endDate">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Image</label>
+                            <img [src]="tripForm.value.imageUri" height="200"> <br/>
+                            <input type='file' (change)="onSelectFile($event)">
+                        </div>
+                        
+                        <button type="submit" value="addTrip" class="btn btn-primary" data-dismiss="modal">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "trips-a6713": {
+      "hosting": {
+        "trips-app": [
+          "trips-a6713"
+        ]
+      }
+    }
+  }
+}

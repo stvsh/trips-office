@@ -1,0 +1,33 @@
+<button class="btn btn-lg btn-primary" (click)="open()">Add trip</button>
+
+<div class="card-deck mx-auto">
+    <div *ngFor="let trip of trips$ | async">
+        <div class="card" style="width: 40rem; margin-bottom: 5rem">
+            <div *ngIf="trip">
+                <div class="card-header">
+                    <h3 class="card-title display-5">{{ trip.name | uppercase}}, {{ trip.country | uppercase }}</h3>
+                </div>
+        
+                <a routerLink="/trips/{{trip.id}}" title="Show trip details">
+                    <img class="card-img-top" src={{trip.imageUri}}>
+                </a>
+                
+                <div class="card-body">
+                    <h5>Price: {{ trip.price | currency}}</h5>
+                    <h5>Date: {{ trip.startDate | date: 'MM/dd/yyyy' }} - {{ trip.endDate | date: 'MM/dd/yyyy' }}</h5>
+                </div>
+
+                <div class="card-footer">
+                    <div class="btn-group btn-group" role="group">
+                        <button type="button" class="btn btn-danger" (click)="deleteTrip(trip)">
+                            Delete
+                        </button>
+                        <button type="button" class="btn btn-primary" (click)="editTrip(trip)">
+                            Edit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" routerLink="/trips">
+        <img src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        Jacex Travel
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content:flex-end">
+      <div *ngIf="user">
+        <div ngbDropdown display="dynamic" placement="bottom-right" class="d-inline-block">
+            
+            <button *ngIf="admin" class="mr-sm-2 btn btn-secondary" routerLink="admin">Admin Panel</button>
+
+            <button *ngIf="!admin" id="cart-dropdown" class="mr-sm-2 btn btn-primary" ngbDropdownToggle><i class="fa fa-shopping-cart"></i>
+                <span *ngIf="bookingsCount > 0" class="ml-1 badge badge-light">{{ bookingsCount}}</span>
+            </button>
+            
+            <div id='cart-dropdown-menu' ngbDropdownMenu aria-labelledby="cart-dropdown">
+                <app-cart></app-cart>
+            </div>
+        </div>
+
+        <div *ngIf="user" ngbDropdown class="d-inline-block" display="dynamic" placement="bottom-right">
+            <button class="btn btn-dark" id="user-dropdown" ngbDropdownToggle>{{ user.email }}</button>
+            
+            <div ngbDropdownMenu aria-labelledby="user-dropdown">
+                <button ngbDropdownItem (click)="logout()"><i class="fa fa-sign-out"></i> Logout</button>
+            </div>
+        </div>
+      </div>
+    </div>
+</nav>

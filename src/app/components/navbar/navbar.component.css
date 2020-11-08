@@ -1,0 +1,7 @@
+#cart-dropdown::after {
+    display:none;
+}
+
+#cart-dropdown-menu {
+    width: 250px !important;
+}

@@ -1,0 +1,6 @@
+<h5>Countries:</h5>
+
+<div *ngFor="let country of allCountries" class="form-check">
+    <input id="{{country}}" type="checkbox" class="form-check-input" (change)="onCountriesChange($event.target.id, $event.target.checked)">
+    <label for="{{country}}" class="form-check-label">{{ country }}</label>
+</div>

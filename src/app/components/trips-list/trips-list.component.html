@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <h2 class="display-4 mt-2 text-center mt-3 mb-5">AvailableTrips</h2>
+    <div class="row">
+        <div class="col-3">
+            <!-- <app-booked-trips></app-booked-trips> -->
+            <app-filters
+                (ratings)="onRatingFilter($event)"
+                (minPrice)="onMinPriceFilter($event)"
+                (maxPrice)="onMaxPriceFilter($event)"
+                (startDate)="onStartDateFilter($event)"
+                (endDate)="onEndDateFilter($event)"
+                (countries)="onCountryFilter($event)"></app-filters>
+        </div>
+
+        <div class="col-9 card-deck">
+            <div class="w-60" *ngFor="let trip of trips | tripRatings: ratings | tripMinPrice: minPrice | tripMaxPrice: maxPrice | tripStartDate: startDate | tripEndDate: endDate | tripCountry: countries">
+                <app-trip [trip]="trip"></app-trip>
+            </div>
+        </div>
+    </div>
+</div>

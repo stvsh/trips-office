@@ -1,0 +1,17 @@
+.cheap-trip {
+    color: green;
+}
+
+.average-trip {
+    color: black;
+}
+
+.expensive-trip {
+    color: red;
+}
+
+.card-image-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
