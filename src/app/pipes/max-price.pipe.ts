@@ -7,7 +7,7 @@ import { Trip } from '../models/trip';
 export class MaxPricePipe implements PipeTransform {
 
   transform(trips: Trip[], maxPrice: number): Trip[] {
-    if (!maxPrice) return trips;
+    if (!maxPrice) { return trips; }
 
     return trips.filter(trip => trip.price <= maxPrice);
   }

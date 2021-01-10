@@ -12,7 +12,6 @@ import { TripsListComponent } from './components/trips-list/trips-list.component
 import { TripComponent } from './components/trip/trip.component';
 import { TripFormComponent } from './components/trip-form/trip-form.component';
 import { CartComponent } from './components/cart/cart.component';
-import { BookedTripsComponent } from './components/booked-trips/booked-trips.component';
 import { TripDetailsComponent } from './components/trip-details/trip-details.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -45,7 +44,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     TripComponent,
     TripFormComponent,
     CartComponent,
-    BookedTripsComponent,
     TripDetailsComponent,
     LoginComponent,
     RegisterComponent,
@@ -73,17 +71,17 @@ import { NavbarComponent } from './components/navbar/navbar.component';
       { path: '', redirectTo: '/trips', pathMatch: 'full' },
       { path: 'register', component: RegisterComponent },
       { path: 'login', component: LoginComponent },
-      { 
+      {
         path: 'trips',
         component: TripsListComponent,
         canActivate: [AuthGuard]
       },
-      { 
+      {
         path: 'trips/:id',
         component: TripDetailsComponent,
         canActivate: [AuthGuard]
       },
-      { 
+      {
         path: 'cart',
         component: CartComponent,
         canActivate: [AuthGuard]

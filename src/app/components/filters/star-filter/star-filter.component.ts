@@ -9,7 +9,7 @@ export class StarFilterComponent implements OnInit {
 
   @Output() ratings = new EventEmitter<number[]>();
 
-  _ratings: number[] = [];
+  selectedRatings: number[] = [];
 
   constructor() { }
 
@@ -18,11 +18,11 @@ export class StarFilterComponent implements OnInit {
 
   onRatingsChange(rating: number, isSelected: boolean): void {
     if (isSelected) {
-      this._ratings = [ ...this._ratings, rating ];
+      this.selectedRatings = [ ...this.selectedRatings, rating ];
     } else {
-      this._ratings = this._ratings.filter(val => val !== rating);
+      this.selectedRatings = this.selectedRatings.filter(val => val !== rating);
     }
 
-    this.ratings.emit(this._ratings);
+    this.ratings.emit(this.selectedRatings);
   }
 }

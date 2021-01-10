@@ -1,9 +1,9 @@
 export interface Roles {
-    admin: boolean
+    admin: boolean;
 }
 
 export interface User {
-    id?: string,
-    email: string,
-    roles: Roles
+    id?: string;
+    email: string;
+    roles: Roles;
 }

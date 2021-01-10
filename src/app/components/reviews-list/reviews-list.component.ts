@@ -14,8 +14,8 @@ export class ReviewsListComponent implements OnInit {
   @Input() trip: Trip;
   @Input() currentUser: User;
   @Input() tripReviews: Review[] = [];
-  
-  userOrders: Order[] = []
+
+  userOrders: Order[] = [];
 
   constructor(
     private reviewsService: ReviewsService,
@@ -25,7 +25,7 @@ export class ReviewsListComponent implements OnInit {
   ngOnInit(): void {
     this.reviewsService.getTripReviews(this.trip).subscribe(reviews => {
       this.tripReviews = reviews;
-      this.sortReviewsByCreationDate();      
+      this.sortReviewsByCreationDate();
     });
     this.cartService.getUserOrders(this.currentUser).subscribe(orders => this.userOrders = orders);
   }
@@ -36,8 +36,8 @@ export class ReviewsListComponent implements OnInit {
         return -1;
       } else if (r1.createdAt > r2.createdAt) {
         return 1;
-      } 
-      
+      }
+
       return 0;
     });
   }

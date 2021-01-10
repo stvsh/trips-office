@@ -8,13 +8,13 @@ import { User } from '../models/user';
 import firebase from 'firebase/app';
 
 export interface Cart {
-  bookings: Booking[],
-  value: number
+  bookings: Booking[];
+  value: number;
 }
 
 export interface Order {
-  tripId: string,
-  quantity: number
+  tripId: string;
+  quantity: number;
 }
 
 @Injectable({
@@ -46,7 +46,7 @@ export class CartService {
   }
 
   addBooking(user: User, booking: Booking): void {
-    this.afs.collection<Cart>('carts').doc(user.id).collection<Booking>('bookings').doc(booking.tripId).set({ quantity: booking.quantity })
+    this.afs.collection<Cart>('carts').doc(user.id).collection<Booking>('bookings').doc(booking.tripId).set({ quantity: booking.quantity });
   }
 
   purchaseTrips(user: User, bookings: Booking[]): void {
@@ -59,6 +59,6 @@ export class CartService {
       this.afs.doc(`trips/${booking.tripId}`).update({ availableSeats: firebase.firestore.FieldValue.increment(-booking.quantity) });
     }
 
-    this.afs.doc(`carts/${userId}`).collection('bookings')
+    this.afs.doc(`carts/${userId}`).collection('bookings');
   }
 }

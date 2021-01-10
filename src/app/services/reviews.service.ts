@@ -5,11 +5,11 @@ import firebase from 'firebase/app';
 import { Trip } from '../models/trip';
 
 export interface Review {
-  author: string,
-  message: string,
-  rating: number,
-  tripId: string
-  createdAt?: firebase.firestore.Timestamp,
+  author: string;
+  message: string;
+  rating: number;
+  tripId: string;
+  createdAt?: firebase.firestore.Timestamp;
 }
 
 @Injectable({

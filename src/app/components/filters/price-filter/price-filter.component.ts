@@ -17,11 +17,11 @@ export class PriceFilterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onMinPriceChange(minPrice: number) {
+  onMinPriceChange(minPrice: number): void {
     this.minPrice.emit(minPrice);
   }
 
-  onMaxPriceChange(maxPrice: number) {
+  onMaxPriceChange(maxPrice: number): void {
     this.maxPrice.emit(maxPrice);
   }
 }

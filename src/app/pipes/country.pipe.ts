@@ -7,7 +7,7 @@ import { Trip } from '../models/trip';
 export class CountryPipe implements PipeTransform {
 
   transform(trips: Trip[], countries: string[]): unknown {
-    if (!countries || countries.length === 0) return trips;
+    if (!countries || countries.length === 0) { return trips; }
 
     return trips.filter(trip => countries.includes(trip.country));
   }

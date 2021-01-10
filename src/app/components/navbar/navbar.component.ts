@@ -13,7 +13,7 @@ import { CartService } from 'src/app/services/cart.service';
 export class NavbarComponent implements OnInit {
 
   user: User;
-  userBookings: Booking[] = []; 
+  userBookings: Booking[] = [];
 
   get bookingsCount(): number {
     return this.userBookings.length;
@@ -34,7 +34,7 @@ export class NavbarComponent implements OnInit {
       if (user) {
         this.cartService.getUserBookings(user).subscribe(bookings => {
           this.userBookings = bookings;
-        })
+        });
       }
     });
   }

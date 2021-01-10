@@ -1,4 +1,4 @@
 export interface Booking {
-    tripId?: string,
-    quantity: number
+    tripId?: string;
+    quantity: number;
 }

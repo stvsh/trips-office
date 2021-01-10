@@ -7,9 +7,9 @@ import { Trip } from '../models/trip';
 export class EndDatePipe implements PipeTransform {
 
   transform(trips: Trip[], endDate: string): unknown {
-    if (!endDate) return trips;
+    if (!endDate) { return trips; }
 
-    console.log(endDate)
+    console.log(endDate);
 
     return trips.filter(trip => new Date(trip.endDate) <= new Date(endDate));
   }

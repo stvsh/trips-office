@@ -19,27 +19,27 @@ export class FiltersComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onRatingFilter(ratings: number[]) {
+  onRatingFilter(ratings: number[]): void {
     this.ratings.emit(ratings);
   }
 
-  onMinPriceFilter(minPrice: number) {
+  onMinPriceFilter(minPrice: number): void {
     this.minPrice.emit(minPrice);
   }
 
-  onMaxPriceFilter(maxPrice: number) {
+  onMaxPriceFilter(maxPrice: number): void {
     this.maxPrice.emit(maxPrice);
   }
 
-  onStartDateFilter(startDate: string) {
+  onStartDateFilter(startDate: string): void {
     this.startDate.emit(startDate);
   }
 
-  onEndDateFilter(endDate: string) {
+  onEndDateFilter(endDate: string): void {
     this.endDate.emit(endDate);
   }
 
-  onCountryFilter(countries: string[]) {
+  onCountryFilter(countries: string[]): void {
     this.countries.emit(countries);
   }
 }

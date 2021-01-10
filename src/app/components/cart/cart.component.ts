@@ -30,10 +30,10 @@ export class CartComponent implements OnInit {
     private cartService: CartService,
     private authService: AuthService,
     private router: Router,
-    private tripsService: TripStoreService 
-  ) { 
+    private tripsService: TripStoreService
+  ) {
   }
-  
+
   ngOnInit(): void {
     this.authService.authState$.subscribe(user => {
       this.user = user;
@@ -44,7 +44,7 @@ export class CartComponent implements OnInit {
     });
 
     this.tripsService.trips.subscribe(trips => {
-      this.trips = trips
+      this.trips = trips;
     });
   }
 
@@ -52,7 +52,7 @@ export class CartComponent implements OnInit {
     return this.trips.find(trip => trip.id === tripId);
   }
 
-  buy() {
+  buy(): void {
     this.cartService.purchaseTrips(this.user, this.bookings);
   }
 }

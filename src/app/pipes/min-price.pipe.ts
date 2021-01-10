@@ -7,7 +7,7 @@ import { Trip } from '../models/trip';
 export class MinPricePipe implements PipeTransform {
 
   transform(trips: Trip[], minPrice: number): Trip[] {
-    if (!minPrice) return trips;
+    if (!minPrice) { return trips; }
 
     return trips.filter(trip => trip.price >= minPrice);
   }

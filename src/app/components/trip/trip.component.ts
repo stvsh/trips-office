@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { BookingStoreService } from '../../services/booking-store.service';
 import { Trip } from '../../models/trip';
 import { Review, ReviewsService } from 'src/app/services/reviews.service';
 
@@ -9,8 +8,8 @@ import { Review, ReviewsService } from 'src/app/services/reviews.service';
   styleUrls: ['./trip.component.css']
 })
 export class TripComponent implements OnInit {
-  
-  @Input() trip: Trip;  
+
+  @Input() trip: Trip;
 
   tripReviews: Review[] = [];
 

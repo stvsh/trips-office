@@ -26,36 +26,35 @@ export class TripsListComponent implements OnInit {
     this.tripStore.trips.subscribe(trips => this.trips = trips);
   }
 
-  onDelete(trip: Trip) {
+  onDelete(trip: Trip): void {
     this.tripStore.deleteTrip(trip);
   }
 
-  open() {
+  open(): void {
     this.modalService.open(TripFormComponent);
   }
 
-  onRatingFilter(ratings: number[]) {
+  onRatingFilter(ratings: number[]): void {
     this.ratings = ratings;
   }
 
-  onMinPriceFilter(minPrice: number) {
+  onMinPriceFilter(minPrice: number): void {
     this.minPrice = minPrice;
   }
 
-  onMaxPriceFilter(maxPrice: number) {
+  onMaxPriceFilter(maxPrice: number): void {
     this.maxPrice = maxPrice;
   }
 
-  onStartDateFilter(startDate: string) {
+  onStartDateFilter(startDate: string): void {
     this.startDate = startDate;
   }
 
-  onEndDateFilter(endDate: string) {
+  onEndDateFilter(endDate: string): void {
     this.endDate = endDate;
   }
 
-  onCountryFilter(countries: string[]) {
-    console.log(countries);
+  onCountryFilter(countries: string[]): void {
     this.countries = countries;
   }
 }

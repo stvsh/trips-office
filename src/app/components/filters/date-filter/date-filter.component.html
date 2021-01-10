@@ -2,10 +2,10 @@
 
 <div class="row">
     <div class="col-6">
-        <input type="date" (change)="onStartDateChange($event.target.value)" max="{{_endDate}}">
+        <input type="date" (change)="onStartDateChange($event.target.value)" max="{{selectedEndDate}}">
     </div>
 
     <div class="col-6">
-        <input type="date" (change)="onEndDateChange($event.target.value)" min="{{_startDate}}">
+        <input type="date" (change)="onEndDateChange($event.target.value)" min="{{selectedStartDate}}">
     </div>
 </div>

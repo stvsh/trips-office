@@ -13,7 +13,7 @@ import { TripStoreService } from '../../services/trip-store.service';
 export class TripFormComponent implements OnInit {
   @Input() trip?: Trip;
 
-  url: string = '';
+  url = '';
   tripForm: FormGroup;
 
   constructor(
@@ -27,8 +27,8 @@ export class TripFormComponent implements OnInit {
       this.tripForm = this.fb.group({
         name: [this.trip.name, [Validators.required, Validators.minLength(3)]],
         country: [this.trip.country, [Validators.required]],
-        price: [this.trip.price, [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1)]],
-        capacity: [this.trip.capacity, [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1)]],
+        price: [this.trip.price, [Validators.required, Validators.pattern('^[0-9]*$'), Validators.min(1)]],
+        capacity: [this.trip.capacity, [Validators.required, Validators.pattern('^[0-9]*$'), Validators.min(1)]],
         description: [this.trip.description],
         startDate: [formatDate(this.trip.startDate, 'yyyy-MM-dd', 'en'), [Validators.required]],
         endDate: [formatDate(this.trip.endDate, 'yyyy-MM-dd', 'en'), [Validators.required]],
@@ -38,8 +38,8 @@ export class TripFormComponent implements OnInit {
       this.tripForm = this.fb.group({
         name: ['', [Validators.required, Validators.minLength(3)]],
         country: ['', [Validators.required]],
-        price: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1)]],
-        capacity: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1)]],
+        price: ['', [Validators.required, Validators.pattern('^[0-9]*$'), Validators.min(1)]],
+        capacity: ['', [Validators.required, Validators.pattern('^[0-9]*$'), Validators.min(1)]],
         description: [''],
         startDate: ['', [Validators.required]],
         endDate: ['', [Validators.required]],
@@ -48,17 +48,17 @@ export class TripFormComponent implements OnInit {
     }
   }
 
-  onSelectFile(event) {
-    if (event.target.files && event.target.files[0]) {
-      var reader = new FileReader();
+  onSelectFile(seletFileEvent): void {
+    if (seletFileEvent.target.files && seletFileEvent.target.files[0]) {
+      const reader = new FileReader();
 
-      reader.readAsDataURL(event.target.files[0]);
+      reader.readAsDataURL(seletFileEvent.target.files[0]);
 
       reader.onload = (event) => {
         this.tripForm.patchValue({
           imageUri: event.target.result.toString()
         });
-      }
+      };
     }
   }
 

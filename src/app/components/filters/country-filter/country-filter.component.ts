@@ -11,23 +11,23 @@ export class CountryFilterComponent implements OnInit {
   @Output() countries = new EventEmitter<string[]>();
 
   allCountries: string[] = [];
-  _countries: string[] = [];
+  selectedCountries: string[] = [];
 
   constructor(private tripsService: TripStoreService) { }
 
   ngOnInit(): void {
     this.tripsService.trips.subscribe(trips => {
       this.allCountries = trips.map(trip => trip.country);
-    })
+    });
   }
 
-  onCountriesChange(country: string, isSelected: boolean) {
+  onCountriesChange(country: string, isSelected: boolean): void {
     if (isSelected) {
-      this._countries = [ ...this._countries, country ];
+      this.selectedCountries = [ ...this.selectedCountries, country ];
     } else {
-      this._countries = this._countries.filter(val => val !== country)
+      this.selectedCountries = this.selectedCountries.filter(val => val !== country);
     }
 
-    this.countries.emit(this._countries);
+    this.countries.emit(this.selectedCountries);
   }
 }

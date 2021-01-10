@@ -18,11 +18,11 @@ export class AdminGuard implements CanActivate {
       map(user => user.roles.admin),
       tap(isAdmin => {
         if (isAdmin) {
-          console.log("Hello admin!");
+          console.log('Hello admin!');
         } else {
-          console.error("Acces denied!");
+          console.error('Acces denied!');
         }
       })
-    )
+    );
   }
 }

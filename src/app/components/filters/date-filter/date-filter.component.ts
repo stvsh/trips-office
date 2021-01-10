@@ -12,20 +12,20 @@ export class DateFilterComponent implements OnInit {
 
   constructor() { }
 
-  _startDate: string;
-  _endDate: string;
+  selectedStartDate: string;
+  selectedEndDate: string;
 
   ngOnInit(): void {
   }
 
-  onStartDateChange(startDate: string) {
-    this._startDate = startDate;
+  onStartDateChange(startDate: string): void {
+    this.selectedStartDate = startDate;
     this.startDate.emit(startDate);
   }
-  
-  onEndDateChange(endDate: string) {
-    this._endDate = endDate;
+
+  onEndDateChange(endDate: string): void {
+    this.selectedEndDate = endDate;
     this.endDate.emit(endDate);
   }
-  
+
 }

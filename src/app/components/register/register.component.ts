@@ -25,20 +25,17 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  register(registerForm: FormGroup) {
-    const { email, password, passwordConfirmed } = registerForm.value;
+  register(registerForm: FormGroup): void {
+    const { email, password, _passwordConfirmed } = registerForm.value;
 
     const credentials: Credentials = { email, password };
-
-    console.log("FORM VAL: " + registerForm.value)
 
     this.auth.register(credentials)
       .then(
         data => {
-          console.log(data);
-          const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+          const returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
           this.router.navigateByUrl(returnUrl);
         }
-      )
+      );
   }
 }

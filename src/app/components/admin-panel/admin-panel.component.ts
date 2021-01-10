@@ -20,7 +20,7 @@ export class AdminPanelComponent {
     this.trips$ = tripStore.trips;
   }
 
-  open() {
+  open(): void {
     this.modalService.open(TripFormComponent);
   }
 

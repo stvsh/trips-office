@@ -9,10 +9,10 @@ import { AuthService, Credentials } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
+
   readonly alertMessage: string  = 'Invalid email or password';
-  showAlert: boolean = false;
-  
+  showAlert = false;
+
   loginForm: FormGroup = this.fb.group({
     email: [''],
     password: ['']
@@ -28,20 +28,20 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm.valueChanges.subscribe(form => {
       this.showAlert = false;
-    })
+    });
   }
 
-  login(loginForm: FormGroup) {
+  login(loginForm: FormGroup): void {
     const credentials: Credentials = { ...loginForm.value };
 
     this.auth.login(credentials)
       .then(data => {
-          const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+          const returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
           this.router.navigateByUrl(returnUrl);
       })
       .catch(error => {
         this.loginForm.reset();
         this.showAlert = true;
-      })
+      });
   }
 }

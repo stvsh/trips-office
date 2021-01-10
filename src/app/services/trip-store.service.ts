@@ -14,7 +14,7 @@ export class TripStoreService {
     this.tripsCollection = afs.collection<Trip>('trips');
     this.trips = this.tripsCollection.valueChanges({ idField: 'id' });
   }
-  
+
   addTrip(trip: Trip): void {
     delete trip.id;
     this.tripsCollection.add(trip);

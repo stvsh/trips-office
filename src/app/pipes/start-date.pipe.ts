@@ -7,7 +7,7 @@ import { Trip } from '../models/trip';
 export class StartDatePipe implements PipeTransform {
 
   transform(trips: Trip[], startDate: string): unknown {
-    if (!startDate) return trips;
+    if (!startDate) { return trips; }
 
     return trips.filter(trip => new Date(trip.startDate) >= new Date(startDate));
   }

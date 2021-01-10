@@ -2,15 +2,15 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import firebase from 'firebase/app'
+import firebase from 'firebase/app';
 import { User } from '../models/user';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 
 export interface Credentials {
-  email: string,
-  password: string
-};
+  email: string;
+  password: string;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -29,44 +29,25 @@ export class AuthService {
       } else {
         return of(null);
       }
-    }))
+    }));
   }
 
   login({email, password}: Credentials): Promise<firebase.auth.UserCredential> {
     return this.fireAuth.signInWithEmailAndPassword(email, password);
   }
 
-  register({email, password}: Credentials) {
+  register({email, password}: Credentials): Promise<void> {
     return this.fireAuth.createUserWithEmailAndPassword(email, password).then(created => {
       this.afs.collection<User>('users').doc(created.user.uid).set({
         email: created.user.email,
         roles: { admin: false }
-      })
+      });
     });
   }
 
-  logout() {
+  logout(): Promise<void> {
     return this.fireAuth.signOut().then(() => {
       this.router.navigateByUrl('/login');
     });
-  }
-
-  canDeleteTrip (user: User): boolean {
-    const allowedRoles = ['admin'];
-    return this.checkAuthorization(user, allowedRoles);
-  }
-
-  private checkAuthorization(user: User, allowedRoles: string[]): boolean {
-    if (!user) {
-      return false;
-    }
-
-    for (const role of allowedRoles) {
-      if (user.roles[role]) {
-        return true;
-      }
-    }
-
-    return false;
   }
 }

@@ -14,17 +14,17 @@ import { TripStoreService } from 'src/app/services/trip-store.service';
   styleUrls: ['./trip-details.component.css']
 })
 export class TripDetailsComponent implements OnInit {
-  
+
   readonly maxRate: number = 10;
-  
+
   trip: Trip;
   currentUser: User;
 
-  quantity: number = 0;
+  quantity = 0;
 
   tripAllBookings: Booking[] = [];
   tripUserBooking: Booking | null = null;
-  userOrders: Order[] = []
+  userOrders: Order[] = [];
   tripReviews: Review[] = [];
 
   reviewRating: number;
@@ -55,7 +55,7 @@ export class TripDetailsComponent implements OnInit {
   }
 
   get userBookedTrip(): boolean {
-    return this.tripUserBooking != undefined;
+    return this.tripUserBooking !== undefined;
   }
 
   get userPurchasedTrip(): boolean {
@@ -74,33 +74,33 @@ export class TripDetailsComponent implements OnInit {
     private reviewsService: ReviewsService,
   ) {}
 
-  ngOnInit(): void {  
+  ngOnInit(): void {
     const id: string = this.route.snapshot.paramMap.get('id');
 
     this.tripStore.trips.subscribe(trips => {
-      const selectedTrip = trips.find(t => t.id === id)
+      const selectedTrip = trips.find(t => t.id === id);
 
       this.trip = selectedTrip;
-      
+
       this.reviewsService.getTripReviews(selectedTrip).subscribe(tripReviews => this.tripReviews = tripReviews);
       this.cartService.getTripBookings(selectedTrip).subscribe(tripBookings => this.tripAllBookings = tripBookings);
 
       this.authService.authState$.subscribe(user => {
-        this.currentUser = user
+        this.currentUser = user;
         this.cartService.getUserBookings(user).subscribe(userBookings => {
           const userBooking = userBookings.find(booking => booking.tripId === selectedTrip.id);
-          
+
           this.tripUserBooking = userBooking;
-          
+
           if (userBooking) {
-            this.quantity = userBooking.quantity; 
+            this.quantity = userBooking.quantity;
           }
         });
 
         this.cartService.getUserOrders(user).subscribe(orders => {
           console.log(orders);
           this.userOrders = orders;
-        })
+        });
       });
     });
   }
@@ -113,7 +113,7 @@ export class TripDetailsComponent implements OnInit {
   }
 
   addReview(): void {
-    const review: Review = { 
+    const review: Review = {
       author: this.currentUser.email,
       message: this.reviewMessage,
       rating: this.reviewRating,
@@ -123,11 +123,11 @@ export class TripDetailsComponent implements OnInit {
     this.reviewsService.addReview(this.trip, review);
   }
 
-  plus() {
+  plus(): void {
     this.quantity++;
   }
 
-  minus() {
+  minus(): void {
     this.quantity--;
   }
 }
